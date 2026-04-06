@@ -267,6 +267,8 @@ textarea {
 }
 
 .hero-photo {
+  display: grid;
+  grid-template-rows: 1fr auto;
   overflow: hidden;
   border-radius: var(--radius-lg);
 }
@@ -281,8 +283,16 @@ textarea {
 
 .photo-surface {
   position: relative;
-  min-height: 100%;
+  min-height: 280px;
   overflow: hidden;
+}
+
+.hero-photo-main .photo-surface {
+  min-height: 470px;
+}
+
+.hero-photo-sub .photo-surface {
+  min-height: 270px;
 }
 
 .photo-pipe {
@@ -376,14 +386,14 @@ textarea {
   padding: 18px 20px 22px;
 }
 
-.hero-photo strong,
+.hero-photo figcaption strong,
 .work-tile h3 {
   display: block;
   margin-bottom: 8px;
   font-size: 1rem;
 }
 
-.hero-photo span,
+.hero-photo figcaption span,
 .profile-photo figcaption {
   color: var(--muted);
   line-height: 1.8;
@@ -452,6 +462,9 @@ textarea {
 
 .work-tile {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 240px;
   padding: 20px;
   border-radius: var(--radius-md);
@@ -731,16 +744,8 @@ textarea {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.7s var(--ease),
-    transform 0.7s var(--ease);
-}
-
-.reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (max-width: 1080px) {
@@ -820,8 +825,4 @@ textarea {
     transition: none !important;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
