@@ -271,6 +271,7 @@ textarea {
   grid-template-rows: 1fr auto;
   overflow: hidden;
   border-radius: var(--radius-lg);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 
 .hero-photo-main {
@@ -281,104 +282,33 @@ textarea {
   min-height: 360px;
 }
 
-.photo-surface {
-  position: relative;
-  min-height: 280px;
-  overflow: hidden;
+.hero-photo-image {
+  width: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.02);
+  transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
 }
 
-.hero-photo-main .photo-surface {
-  min-height: 470px;
+.hero-photo-main .hero-photo-image {
+  height: 470px;
 }
 
-.hero-photo-sub .photo-surface {
-  min-height: 270px;
+.hero-photo-sub .hero-photo-image {
+  height: 270px;
 }
 
-.photo-pipe {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(192, 197, 203, 0.3)),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(31, 31, 31, 0.08));
+.hero-photo-image-window {
+  object-position: center;
 }
 
-.photo-screen {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(198, 204, 210, 0.34)),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(31, 31, 31, 0.08));
+.hero-photo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 50px rgba(20, 23, 26, 0.1);
 }
 
-.pipe-a,
-.pipe-b,
-.pipe-c,
-.mesh-line,
-.photo-point {
-  position: absolute;
-}
-
-.pipe-a {
-  width: 18px;
-  height: 140%;
-  top: -12%;
-  left: 54%;
-  transform: rotate(-28deg);
-  background: rgba(31, 31, 31, 0.18);
-  border-radius: 999px;
-}
-
-.pipe-b {
-  width: 9px;
-  height: 140%;
-  top: -10%;
-  left: 49%;
-  transform: rotate(-28deg);
-  background: rgba(255, 255, 255, 0.72);
-  border-radius: 999px;
-}
-
-.pipe-c {
-  width: 180px;
-  height: 10px;
-  left: 18%;
-  bottom: 20%;
-  transform: rotate(8deg);
-  background: rgba(31, 31, 31, 0.12);
-  border-radius: 999px;
-}
-
-.photo-point {
-  width: 14px;
-  height: 14px;
-  left: 16%;
-  top: 24%;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.36);
-  border: 1px solid rgba(31, 31, 31, 0.12);
-}
-
-.mesh-line {
-  inset: 18% 18%;
-  border: 1px solid rgba(31, 31, 31, 0.12);
-  border-radius: 18px;
-}
-
-.mesh-line:nth-child(2) {
-  inset: 18% auto 18% 34%;
-  width: 1px;
-  height: auto;
-  border: none;
-  background: rgba(31, 31, 31, 0.12);
-}
-
-.mesh-line:nth-child(3) {
-  inset: auto 18% 34% 18%;
-  height: 1px;
-  border: none;
-  background: rgba(31, 31, 31, 0.12);
-}
-
-.mesh-line:nth-child(4) {
-  inset: 26% 26%;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+.hero-photo:hover .hero-photo-image {
+  transform: scale(1.04);
+  filter: saturate(0.96) contrast(1.04);
 }
 
 .hero-photo figcaption,
@@ -474,14 +404,26 @@ textarea {
     box-shadow 0.25s ease;
 }
 
+.work-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.82) saturate(0.88);
+  transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
+}
+
+.work-image-window {
+  object-position: center;
+}
+
 .work-tile::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(31, 31, 31, 0.06)),
-    var(--tile-bg, linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(31, 31, 31, 0.12)));
-  transition: transform 0.5s ease;
+    linear-gradient(180deg, rgba(20, 23, 26, 0.08) 0%, rgba(20, 23, 26, 0.12) 32%, rgba(20, 23, 26, 0.66) 100%);
 }
 
 .work-tile::after {
@@ -498,7 +440,13 @@ textarea {
 }
 
 .work-tile:hover::before {
-  transform: scale(1.03);
+  background:
+    linear-gradient(180deg, rgba(20, 23, 26, 0.04) 0%, rgba(20, 23, 26, 0.08) 30%, rgba(20, 23, 26, 0.62) 100%);
+}
+
+.work-tile:hover .work-image {
+  transform: scale(1.04);
+  filter: brightness(0.92) saturate(0.94);
 }
 
 .work-label,
@@ -525,54 +473,14 @@ textarea {
   font-size: 1.15rem;
   line-height: 1.28;
   letter-spacing: -0.02em;
+  color: #ffffff;
 }
 
-.work-01 {
-  --tile-bg:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.32), transparent 18%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(183, 188, 194, 0.6));
-}
-
-.work-02 {
-  --tile-bg:
-    linear-gradient(90deg, rgba(31, 31, 31, 0.08) 0 1px, transparent 1px 24px),
-    linear-gradient(180deg, rgba(31, 31, 31, 0.08) 0 1px, transparent 1px 24px),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(188, 195, 202, 0.48));
-}
-
-.work-03 {
-  --tile-bg:
-    linear-gradient(90deg, rgba(31, 31, 31, 0.14) 0 3px, transparent 3px 42px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(184, 190, 196, 0.5));
-}
-
-.work-04 {
-  --tile-bg:
-    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.34), transparent 18%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(185, 191, 198, 0.52));
-}
-
-.work-05 {
-  --tile-bg:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent 50%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(189, 196, 203, 0.52));
-}
-
-.work-06 {
-  --tile-bg:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.28), transparent 30%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(193, 198, 203, 0.48));
-}
-
-.work-07 {
-  --tile-bg:
-    linear-gradient(180deg, rgba(31, 31, 31, 0.08) 0 8px, transparent 8px 34px),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(193, 187, 179, 0.52));
-}
-
-.work-08 {
-  --tile-bg:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(190, 195, 201, 0.56));
+.works-footnote {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
 }
 
 .profile-grid,
@@ -584,39 +492,24 @@ textarea {
 }
 
 .profile-photo {
+  display: grid;
+  grid-template-rows: 1fr auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-.profile-surface {
-  position: relative;
-  min-height: 520px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(192, 197, 203, 0.32)),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(31, 31, 31, 0.08));
+.profile-image {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.9);
+  transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
 }
 
-.profile-outline,
-.profile-silhouette {
-  position: absolute;
-}
-
-.profile-outline {
-  inset: 28px;
-  border: 1px solid rgba(31, 31, 31, 0.12);
-  border-radius: 28px;
-}
-
-.profile-silhouette {
-  left: 50%;
-  top: 50%;
-  width: 230px;
-  height: 300px;
-  transform: translate(-50%, -50%);
-  border-radius: 130px 130px 82px 82px;
-  background:
-    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.38), transparent 24%),
-    linear-gradient(180deg, rgba(31, 31, 31, 0.18), rgba(31, 31, 31, 0.05));
+.profile-photo:hover .profile-image {
+  transform: scale(1.03);
+  filter: saturate(0.96);
 }
 
 .profile-message strong,
@@ -802,8 +695,14 @@ textarea {
 
   .hero-photo-main,
   .hero-photo-sub,
-  .profile-surface {
+  .profile-image {
     min-height: 300px;
+  }
+
+  .hero-photo-main .hero-photo-image,
+  .hero-photo-sub .hero-photo-image,
+  .profile-image {
+    height: 300px;
   }
 
   .contact-form,

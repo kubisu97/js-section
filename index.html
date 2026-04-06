@@ -14,6 +14,8 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://images.pexels.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
       rel="stylesheet"
@@ -64,12 +66,13 @@
 
           <div class="hero-media reveal">
             <figure class="hero-photo hero-photo-main" data-parallax="0.08">
-              <div class="photo-surface photo-pipe">
-                <span class="photo-line pipe-a"></span>
-                <span class="photo-line pipe-b"></span>
-                <span class="photo-line pipe-c"></span>
-                <span class="photo-point"></span>
-              </div>
+              <img
+                class="hero-photo-image"
+                src="https://images.pexels.com/photos/5463575/pexels-photo-5463575.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1800&dpr=1"
+                alt="屋外のエアコン設備を丁寧に点検する施工イメージ"
+                fetchpriority="high"
+                decoding="async"
+              />
               <figcaption>
                 <strong>配管の納まり</strong>
                 <span>きれいに見える仕事は、ルートの判断から違います。</span>
@@ -77,12 +80,13 @@
             </figure>
 
             <figure class="hero-photo hero-photo-sub" data-parallax="0.12">
-              <div class="photo-surface photo-screen">
-                <span class="mesh-line"></span>
-                <span class="mesh-line"></span>
-                <span class="mesh-line"></span>
-                <span class="mesh-line"></span>
-              </div>
+              <img
+                class="hero-photo-image hero-photo-image-window"
+                src="https://images.unsplash.com/photo-1565136689115-40073bdd6931?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1200"
+                alt="整った網戸と窓まわりの仕上がりを思わせるイメージ"
+                loading="lazy"
+                decoding="async"
+              />
               <figcaption>
                 <strong>網戸の張り</strong>
                 <span>寄って見ても気持ちいい、そんな仕上がりへ。</span>
@@ -184,50 +188,115 @@
           </div>
 
           <div class="works-grid">
-            <article class="work-tile work-01 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image"
+                src="https://images.pexels.com/photos/5463587/pexels-photo-5463587.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1"
+                alt="空調設備の施工や点検を思わせるイメージ"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">空調設備</span>
               <h3>エアコン配管の納まり</h3>
             </article>
-            <article class="work-tile work-02 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image work-image-window"
+                src="https://images.unsplash.com/photo-1565136689115-40073bdd6931?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1200"
+                alt="窓まわりと網戸のディテールを思わせるイメージ"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">窓・サッシ</span>
               <h3>網戸の張り替え</h3>
             </article>
-            <article class="work-tile work-03 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image"
+                src="https://images.pexels.com/photos/15250619/pexels-photo-15250619.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1"
+                alt="窓と外観まわりの防犯対策を連想できる建物外観のイメージ"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">窓・サッシ</span>
-              <h3>面格子の取り付け</h3>
+              <h3>窓まわりの防犯対策</h3>
             </article>
-            <article class="work-tile work-04 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image"
+                src="https://images.pexels.com/photos/4943088/pexels-photo-4943088.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1"
+                alt="壁面のコンセント増設をイメージした電源まわりの写真"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">電気工事</span>
               <h3>コンセント増設</h3>
             </article>
-            <article class="work-tile work-05 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image"
+                src="https://images.unsplash.com/photo-1765012873322-00cb5ce0f059?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1200"
+                alt="ミニマルな照明器具の交換イメージ"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">電気工事</span>
               <h3>照明交換</h3>
             </article>
-            <article class="work-tile work-06 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image"
+                src="https://images.unsplash.com/photo-1751486289947-4f5f5961b3aa?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1200"
+                alt="壁内配線やガラスまわりの交換工事を連想させるディテール写真"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">窓・サッシ</span>
-              <h3>ガラス交換</h3>
+              <h3>ガラスまわりの交換対応</h3>
             </article>
-            <article class="work-tile work-07 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image"
+                src="https://images.pexels.com/photos/34053442/pexels-photo-34053442.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1"
+                alt="ウッドデッキを備えた住宅外部空間のイメージ"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">その他</span>
               <h3>テラスデッキ設置</h3>
             </article>
-            <article class="work-tile work-08 reveal">
+            <article class="work-tile reveal">
+              <img
+                class="work-image"
+                src="https://images.unsplash.com/photo-1665400239173-bdbe8b62a6a8?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=1200"
+                alt="木部補修や外まわりの小工事を思わせる素材感のあるイメージ"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="work-label">その他</span>
-              <h3>看板の撤去</h3>
+              <h3>外まわりの小工事</h3>
             </article>
           </div>
+
+          <p class="works-footnote reveal">
+            ※ 現在はフリー素材を仮置きしています。公開時は実際の施工写真やInstagram投稿へ
+            差し替えると、信頼感がさらに伝わります。
+          </p>
         </div>
       </section>
 
       <section class="section section-bordered" id="profile">
         <div class="container profile-grid">
           <figure class="profile-photo reveal">
-            <div class="profile-surface">
-              <span class="profile-outline"></span>
-              <span class="profile-silhouette"></span>
-            </div>
-            <figcaption>作業着で、少し照れくさそうに笑うイメージ。</figcaption>
+            <img
+              class="profile-image"
+              src="https://images.pexels.com/photos/20814721/pexels-photo-20814721.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&dpr=1"
+              alt="作業着姿で穏やかに立つ職人のフリー素材"
+              decoding="async"
+            />
+            <figcaption>
+              現在はフリー素材を仮置きしています。公開時は水野さんご本人の写真へ差し替え予定です。
+            </figcaption>
           </figure>
 
           <div class="profile-copy reveal">
